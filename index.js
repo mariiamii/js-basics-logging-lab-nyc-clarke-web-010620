@@ -1,14 +1,10 @@
 const driver = 'bob';
 
+console.log('this code was called');
+console.log(driver);
+console.log(driver, '');
 
-describe('index.js', function () {
-  describe('driver', function () {
-    it('sets a variable driver equal to bob', function () {
-      expect(driver).to.equal('bob');
-    });
-  });
-
-  describe('console.log()', function () {
+describe('console.log()', function () {
     const spy = sinon.spy(console, 'log');
 
     after(function () {
@@ -26,5 +22,4 @@ describe('index.js', function () {
     it('invokes the console.log with the `driver` variable as the first argument and `is the driver variable name` as the second argument', function () {
       expect(spy.calledWithExactly('bob', 'is the driver variable name')).to.be.true;
     });
-  });
-});
+
